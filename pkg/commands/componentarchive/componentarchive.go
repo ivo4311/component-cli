@@ -20,6 +20,7 @@ func NewComponentArchiveCommand(ctx context.Context) *cobra.Command {
 		Use:     "component-archive",
 		Aliases: []string{"componentarchive", "ca", "archive"},
 	}
+	cmd.AddCommand(NewInitCommand(ctx))
 	cmd.AddCommand(NewExportCommand(ctx))
 	cmd.AddCommand(resources.NewResourcesCommand(ctx))
 	cmd.AddCommand(componentreferences.NewCompRefCommand(ctx))
